@@ -102,7 +102,7 @@ async function setContext() {
 
 async function run() {
     let kubeconfig = getKubeconfig();
-    core.debug(kubeconfig);
+    core.debug(`${kubeconfig}`);
     const runnerTempDirectory = process.env['RUNNER_TEMP']; // Using process.env until the core libs are updated
     const kubeconfigPath = path.join(runnerTempDirectory, `kubeconfig_${Date.now()}`);
     core.debug(`Writing kubeconfig contents to ${kubeconfigPath}`);
